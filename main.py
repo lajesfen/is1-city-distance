@@ -59,9 +59,10 @@ class Interface:
 
         if data1 and data2:
             distance = distCalc.calcDistance(float(data1['lat']), float(data1['lon']), float(data2['lat']), float(data2['lon']))
-            print(f"La distancia entre {city1}, {country1} y {city2}, {country2} es de {round(distance, 2)} km.")
+            return round(distance, 2)
         else:
             print("No se encontraron los datos de las ciudades.")
 
-interface = Interface()
-interface.getDistance("Bogota", "Colombia", "Lima", "Peru", "CSV")
+if __name__ == "__main__":
+    interface = Interface()
+    interface.getDistance("Bogota", "Colombia", "Lima", "Peru", "CSV")
